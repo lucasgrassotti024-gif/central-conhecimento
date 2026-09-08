@@ -19,7 +19,7 @@ export const AdminThemeCard: React.FC<AdminThemeCardProps> = ({
     <div
       className="theme-card admin-card"
       style={{
-        '--card-accent': theme.accent_color
+        '--card-accent': theme.accent_color || '#8b5cf6'
       } as React.CSSProperties}
     >
       <div className="theme-card-top">
@@ -29,17 +29,17 @@ export const AdminThemeCard: React.FC<AdminThemeCardProps> = ({
         <div className="theme-meta-indicators">
           {theme.presentation_url && (
             <span className="material-pill" title="Apresentação cadastrada">
-              <Presentation size={13} /> Slides
+              <Presentation size={12} /> Slides
             </span>
           )}
           {theme.video_url && (
             <span className="material-pill" title="Videoaula cadastrada">
-              <Video size={13} /> Vídeo
+              <Video size={12} /> Vídeo
             </span>
           )}
           {theme.ebook_url && (
-            <span className="material-pill" title="E-book/PDF cadastrado">
-              <FileText size={13} /> PDF
+            <span className="material-pill" title="E-book / PDF cadastrado">
+              <FileText size={12} /> PDF
             </span>
           )}
         </div>
@@ -59,7 +59,7 @@ export const AdminThemeCard: React.FC<AdminThemeCardProps> = ({
           title="Acessar e gerenciar conteúdos deste tema"
         >
           <span>ACESSAR</span>
-          <ArrowRight size={15} />
+          <ArrowRight size={14} />
         </button>
 
         <button
@@ -68,7 +68,7 @@ export const AdminThemeCard: React.FC<AdminThemeCardProps> = ({
           onClick={() => onEdit(theme.id)}
           title="Editar informações do tema"
         >
-          <Edit3 size={15} />
+          <Edit3 size={14} />
           <span>EDITAR</span>
         </button>
 
@@ -78,7 +78,7 @@ export const AdminThemeCard: React.FC<AdminThemeCardProps> = ({
           onClick={() => onDelete(theme)}
           title="Excluir tema"
         >
-          <Trash2 size={15} />
+          <Trash2 size={14} />
           <span>EXCLUIR</span>
         </button>
       </div>

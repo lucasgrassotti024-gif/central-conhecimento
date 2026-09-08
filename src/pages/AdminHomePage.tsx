@@ -100,7 +100,7 @@ export const AdminHomePage: React.FC<AdminHomePageProps> = ({
             {!loading && !errorMessage && (
               <div className="themes-count-badge">
                 <Layers size={14} />
-                <span>{themes.length} temas cadastrados</span>
+                <span>{themes.length === 1 ? '1 tema cadastrado' : `${themes.length} temas cadastrados`}</span>
               </div>
             )}
 

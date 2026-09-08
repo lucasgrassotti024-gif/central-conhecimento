@@ -12,7 +12,7 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({ theme, onSelect }) => {
     <div
       className="theme-card"
       style={{
-        '--card-accent': theme.accent_color
+        '--card-accent': theme.accent_color || '#3b82f6'
       } as React.CSSProperties}
     >
       <div className="theme-card-top">
@@ -21,18 +21,18 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({ theme, onSelect }) => {
         </div>
         <div className="theme-meta-indicators">
           {theme.presentation_url && (
-            <span className="material-pill" title="Apresentação disponível">
-              <Presentation size={13} /> Slides
+            <span className="material-pill" title="Apresentação (Slides) disponível">
+              <Presentation size={12} /> Slides
             </span>
           )}
           {theme.video_url && (
             <span className="material-pill" title="Videoaula disponível">
-              <Video size={13} /> Vídeo
+              <Video size={12} /> Vídeo
             </span>
           )}
           {theme.ebook_url && (
-            <span className="material-pill" title="E-book/PDF disponível">
-              <FileText size={13} /> PDF
+            <span className="material-pill" title="E-book / PDF disponível">
+              <FileText size={12} /> PDF
             </span>
           )}
         </div>
@@ -51,7 +51,7 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({ theme, onSelect }) => {
           aria-label={`Acessar tema ${theme.title}`}
         >
           <span>ACESSAR</span>
-          <ArrowRight size={16} />
+          <ArrowRight size={15} />
         </button>
       </div>
     </div>

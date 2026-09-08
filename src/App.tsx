@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Header } from './components/Header'
 import { HomePage } from './pages/HomePage'
 import { ThemePage } from './pages/ThemePage'
+import { AboutPage } from './pages/AboutPage'
 import { AdminHomePage } from './pages/AdminHomePage'
 import { AdminThemePage } from './pages/AdminThemePage'
 import { CreateThemePage } from './pages/CreateThemePage'
@@ -16,18 +17,19 @@ export default function App() {
 
   // Estado do Roteamento
   const [currentRoute, setCurrentRoute] = useState<{
-    site: 'user' | 'admin' | 'login'
+    site: 'user' | 'admin' | 'login' | 'about'
     themeId: string | null
     adminAction: 'create' | 'edit' | null
   }>(() => {
     const params = new URLSearchParams(window.location.search)
+    const isAbout = params.get('sobre') === 'true'
     const isLogin = params.get('login') === 'true'
     const isAdmin = params.get('admin') === 'true'
     const themeId = params.get('tema')
     const action = params.get('action')
 
     return {
-      site: isLogin ? 'login' : isAdmin ? 'admin' : 'user',
+      site: isAbout ? 'about' : isLogin ? 'login' : isAdmin ? 'admin' : 'user',
       themeId,
       adminAction: action === 'create' || action === 'edit' ? action : null
     }
@@ -36,7 +38,7 @@ export default function App() {
   // Helper de Navegação por URL
   const navigateTo = useCallback(
     async (params: {
-      site: 'user' | 'admin' | 'login'
+      site: 'user' | 'admin' | 'login' | 'about'
       themeId?: string | null
       adminAction?: 'create' | 'edit' | null
     }) => {
@@ -58,6 +60,7 @@ export default function App() {
         }
       }
 
+      if (params.site === 'about') url.searchParams.set('sobre', 'true')
       if (params.site === 'admin') url.searchParams.set('admin', 'true')
       if (params.site === 'login') url.searchParams.set('login', 'true')
       if (params.themeId) url.searchParams.set('tema', params.themeId)
@@ -104,6 +107,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search)
+      const isAbout = params.get('sobre') === 'true'
       const isLogin = params.get('login') === 'true'
       const isAdmin = params.get('admin') === 'true'
       const themeId = params.get('tema')
@@ -119,7 +123,7 @@ export default function App() {
         }
 
         setCurrentRoute({
-          site: isLogin ? 'login' : isAdmin ? 'admin' : 'user',
+          site: isAbout ? 'about' : isLogin ? 'login' : isAdmin ? 'admin' : 'user',
           themeId,
           adminAction: action === 'create' || action === 'edit' ? action : null
         })
@@ -156,7 +160,7 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {/* Background Glow */}
+      {/* Fundo Ambiente Profissional */}
       <div className="bg-ambient">
         <div className="ambient-orb orb-1"></div>
         <div className="ambient-orb orb-2"></div>
@@ -168,6 +172,7 @@ export default function App() {
         isAuthenticated={isAuthenticated}
         currentSite={currentRoute.site}
         onNavigateHome={() => navigateTo({ site: 'user' })}
+        onNavigateAbout={() => navigateTo({ site: 'about' })}
         onNavigateLogin={() => navigateTo({ site: 'login' })}
         onNavigateAdmin={() => navigateTo({ site: 'admin' })}
         onNavigateUserSite={() => navigateTo({ site: 'user' })}
@@ -181,6 +186,11 @@ export default function App() {
           <LoginPage
             onBackToUserSite={() => navigateTo({ site: 'user' })}
             onLoginSuccess={handleLoginSuccess}
+          />
+        ) : currentRoute.site === 'about' ? (
+          // ================= PÁGINA INSTITUCIONAL SOBRE =================
+          <AboutPage
+            onBackToHome={() => navigateTo({ site: 'user' })}
           />
         ) : currentRoute.site === 'admin' ? (
           // ================= ÁREA ADMINISTRATIVA =================
@@ -223,20 +233,28 @@ export default function App() {
         )}
       </main>
 
-      {/* Rodapé da Plataforma */}
+      {/* Rodapé da Plataforma com Identidade NGS */}
       <footer className="footer">
-        <p className="footer-title">
-          {currentRoute.site === 'admin'
-            ? 'Central de Conhecimento • Painel Administrativo'
-            : currentRoute.site === 'login'
-            ? 'Central de Conhecimento • Autenticação de Acesso'
-            : 'Central de Conhecimento'}
-        </p>
-        <p className="footer-subtitle">
-          {currentRoute.site === 'admin'
-            ? 'Gestão de Conteúdos, Materiais & Sincronização Supabase'
-            : 'Plataforma de Capacitação Profissional & Consulta Estruturada por Temas'}
-        </p>
+        <div className="footer-content">
+          <div className="footer-brand-box">
+            <div className="footer-ngs-badge">
+              <span className="footer-ngs-text">NGS</span>
+              <span className="footer-ngs-icon">✈</span>
+            </div>
+            <div className="footer-desc-group">
+              <p className="footer-title">
+                {currentRoute.site === 'admin'
+                  ? 'Central de Conhecimento • Painel Administrativo'
+                  : currentRoute.site === 'login'
+                  ? 'Central de Conhecimento • Autenticação de Acesso'
+                  : 'Plataforma de Estudos & Consultoria Técnica'}
+              </p>
+              <p className="footer-subtitle">
+                Desenvolvida por <strong className="gold-author">Nicholas G. Spolavori</strong> • Analista de Sinistros
+              </p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   )

@@ -1,10 +1,11 @@
 import React from 'react'
-import { BookOpen, Shield, LogIn, LogOut, ArrowLeft } from 'lucide-react'
+import { Shield, LogOut, ArrowLeft, User, Info } from 'lucide-react'
 
 interface HeaderProps {
   isAuthenticated: boolean
-  currentSite: 'user' | 'admin' | 'login'
+  currentSite: 'user' | 'admin' | 'login' | 'about'
   onNavigateHome: () => void
+  onNavigateAbout: () => void
   onNavigateLogin: () => void
   onNavigateAdmin: () => void
   onNavigateUserSite: () => void
@@ -15,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   isAuthenticated,
   currentSite,
   onNavigateHome,
+  onNavigateAbout,
   onNavigateLogin,
   onNavigateAdmin,
   onNavigateUserSite,
@@ -23,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="site-header">
       <div className="header-inner">
-        {/* Logo / Marca */}
+        {/* Logo / Marca NGS */}
         <div
           className="brand-logo"
           onClick={currentSite === 'admin' ? onNavigateAdmin : onNavigateHome}
@@ -32,12 +34,15 @@ export const Header: React.FC<HeaderProps> = ({
           style={{ cursor: 'pointer' }}
           title="Ir para a página inicial"
         >
-          <div className={`brand-icon ${currentSite === 'admin' ? 'admin-icon' : ''}`}>
-            <BookOpen size={20} />
+          {/* Símbolo NGS estilizado */}
+          <div className="ngs-brand-symbol">
+            <span className="ngs-acronym">NGS</span>
+            <span className="ngs-flight-icon">✈</span>
           </div>
+
           <div className="brand-text">
-            <span className="brand-name">Central de Conhecimento</span>
-            <span className={`brand-badge ${currentSite === 'admin' ? 'admin-badge' : ''}`}>
+            <span className="brand-name">Plataforma de Estudos & Capacitação</span>
+            <span className={`brand-badge ${currentSite === 'admin' ? 'admin-badge' : 'pro-badge'}`}>
               {currentSite === 'admin' ? 'ADMIN' : 'PRO'}
             </span>
           </div>
@@ -45,6 +50,19 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Ações de Navegação e Autenticação */}
         <nav className="header-nav">
+          {/* LINK / BOTÃO INSTITUCIONAL "SOBRE" NO SITE PÚBLICO */}
+          {(currentSite === 'user' || currentSite === 'about') && (
+            <button
+              type="button"
+              className={`btn-header-nav-link ${currentSite === 'about' ? 'active' : ''}`}
+              onClick={currentSite === 'about' ? onNavigateHome : onNavigateAbout}
+              title={currentSite === 'about' ? 'Voltar para Temas' : 'Conhecer sobre a Central'}
+            >
+              <Info size={14} />
+              <span>{currentSite === 'about' ? 'Temas' : 'Sobre'}</span>
+            </button>
+          )}
+
           {/* ESTADO 1: TELA DE LOGIN ATIVA */}
           {currentSite === 'login' && (
             <button
@@ -58,27 +76,27 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
-          {/* ESTADO 2: VISITANTE NÃO AUTENTICADO NO SITE DO USUÁRIO */}
-          {currentSite === 'user' && !isAuthenticated && (
+          {/* ESTADO 2: VISITANTE NÃO AUTENTICADO NO SITE DO USUÁRIO OU SOBRE */}
+          {(currentSite === 'user' || currentSite === 'about') && !isAuthenticated && (
             <button
               type="button"
               className="btn-header-login"
               onClick={onNavigateLogin}
-              title="Acessar com credenciais administrativas"
+              title="Acessar Área Administrativa com credenciais"
             >
-              <LogIn size={15} />
-              <span>Entrar</span>
+              <User size={15} />
+              <span>Área Administrativa</span>
             </button>
           )}
 
-          {/* ESTADO 3: ADMINISTRADOR AUTENTICADO NO SITE DO USUÁRIO */}
-          {currentSite === 'user' && isAuthenticated && (
+          {/* ESTADO 3: ADMINISTRADOR AUTENTICADO NO SITE DO USUÁRIO OU SOBRE */}
+          {(currentSite === 'user' || currentSite === 'about') && isAuthenticated && (
             <div className="header-auth-group">
               <button
                 type="button"
                 className="btn-header-admin-active"
                 onClick={onNavigateAdmin}
-                title="Acessar Área Administrativa"
+                title="Acessar Painel Administrativo"
               >
                 <Shield size={14} />
                 <span>Área Administrativa</span>
