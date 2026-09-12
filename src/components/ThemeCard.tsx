@@ -12,29 +12,27 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({ theme, onSelect }) => {
     <div
       className="theme-card"
       style={{
-        '--card-accent': theme.accent_color || '#3b82f6'
+        '--card-accent': theme.accent_color || '#f59e0b'
       } as React.CSSProperties}
     >
       <div className="theme-card-top">
         <div className="theme-emoji-badge">
-          {theme.icon_emoji}
+          {theme.icon_emoji ? (
+            <span className="theme-icon-display">{theme.icon_emoji}</span>
+          ) : (
+            <span className="theme-icon-folder">📁</span>
+          )}
         </div>
         <div className="theme-meta-indicators">
-          {theme.presentation_url && (
-            <span className="material-pill" title="Apresentação (Slides) disponível">
-              <Presentation size={12} /> Slides
-            </span>
-          )}
-          {theme.video_url && (
-            <span className="material-pill" title="Videoaula disponível">
-              <Video size={12} /> Vídeo
-            </span>
-          )}
-          {theme.ebook_url && (
-            <span className="material-pill" title="E-book / PDF disponível">
-              <FileText size={12} /> PDF
-            </span>
-          )}
+          <span className={`material-pill ${theme.presentation_url ? 'active' : 'inactive'}`} title="Apresentação (Slides)">
+            <Presentation size={13} /> Slides
+          </span>
+          <span className={`material-pill ${theme.video_url ? 'active' : 'inactive'}`} title="Videoaula">
+            <Video size={13} /> Vídeo
+          </span>
+          <span className={`material-pill ${theme.ebook_url ? 'active' : 'inactive'}`} title="E-book / PDF">
+            <FileText size={13} /> PDF
+          </span>
         </div>
       </div>
 

@@ -34,10 +34,11 @@ export const Header: React.FC<HeaderProps> = ({
           style={{ cursor: 'pointer' }}
           title="Ir para a página inicial"
         >
-          {/* Símbolo NGS estilizado */}
-          <div className="ngs-brand-symbol">
-            <span className="ngs-acronym">NGS</span>
-            <span className="ngs-flight-icon">✈</span>
+          {/* Marca NGS com logotipo estilizado */}
+          <div className="ngs-brand-logo-img">
+            <span className="ngs-logo-title">NGS</span>
+            <span className="ngs-truck-icon">🚚</span>
+            <span className="ngs-plane-icon">✈</span>
           </div>
 
           <div className="brand-text">

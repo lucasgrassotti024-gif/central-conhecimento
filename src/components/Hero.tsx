@@ -54,11 +54,9 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Assinatura Profissional Nicholas G. Spolavori */}
+          {/* Assinatura Estilizada Nicholas G. Spolavori */}
           <div className="hero-author-signature">
-            <div className="signature-symbol">
-              <span>N</span>
-            </div>
+            <div className="signature-handwritten">Nicholas G. Spolavori</div>
             <div className="signature-info">
               <span className="author-name">NICHOLAS G. SPOLAVORI</span>
               <span className="author-role">ANALISTA DE SINISTROS</span>

@@ -2544,3 +2544,705 @@ body {
     padding: 2rem 1.25rem;
   }
 }
+
+/* =========================================================
+   ESTILOS DE DECORAÇÃO DA REFERÊNCIA (WHITE HERO + NAVY THEMES)
+   ========================================================= */
+
+/* Fundo global e container */
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bg-ambient {
+  display: none;
+}
+
+.app-container {
+  max-width: 1300px;
+  padding: 0.85rem 1.5rem 2rem;
+}
+
+/* Header estilizado branco e limpo */
+.site-header {
+  position: static;
+  margin-bottom: 1.5rem;
+}
+
+.header-inner {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.25rem;
+}
+
+/* Marca NGS com caminhão e avião */
+.ngs-brand-logo-img {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-sans);
+}
+
+.ngs-logo-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.ngs-truck-icon {
+  font-size: 1.15rem;
+  transform: translateY(1px);
+}
+
+.ngs-plane-icon {
+  font-size: 0.95rem;
+  color: #d97706;
+  transform: rotate(25deg);
+}
+
+.brand-name {
+  color: #1e293b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.brand-badge.pro-badge {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #d97706;
+  font-weight: 800;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.6rem;
+}
+
+/* Botões do Header */
+.btn-header-login {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-header-login:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.btn-header-logout {
+  background: #081225;
+  border: 1px solid #081225;
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  padding: 0.48rem 1.15rem;
+  font-weight: 600;
+}
+
+.btn-header-logout:hover {
+  background: #142852;
+  color: #ffffff;
+}
+
+.btn-header-admin-active {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #081225;
+}
+
+.btn-header-nav-link {
+  color: #475569;
+  border-color: #e2e8f0;
+  background: #f8fafc;
+}
+
+.btn-header-nav-link:hover {
+  color: #d97706;
+  border-color: #f59e0b;
+}
+
+/* HERO SECTION - Claro, espaçoso e idêntico à imagem */
+.home-hero-corporate {
+  margin-bottom: 2.5rem;
+}
+
+.hero-grid-split {
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-pill-badge {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #d97706;
+}
+
+.pill-icon {
+  color: #d97706;
+}
+
+.home-hero-title {
+  color: #0f172a;
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.highlight-gold {
+  color: #d97706;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-hero-description {
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-features-list {
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.85rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item {
+  gap: 0.55rem;
+}
+
+.feature-icon-circle {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #d97706;
+  width: 32px;
+  height: 32px;
+}
+
+.feature-text strong {
+  color: #0f172a;
+  font-size: 0.82rem;
+}
+
+.feature-text span {
+  color: #64748b;
+  font-size: 0.72rem;
+}
+
+/* Assinatura Manuscrita com a fonte Caveat */
+.hero-author-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.signature-handwritten {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: #b45309;
+  line-height: 1;
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+.hero-author-signature .signature-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-author-signature .author-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0f172a;
+}
+
+.hero-author-signature .author-role {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #d97706;
+}
+
+/* Coluna Direita com a foto nítida e sem excesso de escuridão */
+.hero-image-frame {
+  border-radius: var(--radius-lg);
+  border: none;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 16 / 10;
+}
+
+.hero-image-overlay {
+  display: none;
+}
+
+.hero-accent-glow {
+  display: none;
+}
+
+/* =========================================================
+   SEÇÃO DE TEMAS DISPONÍVEIS - O BLOCO AZUL-MARINHO PROFUNDO
+   COM MAPA-MÚNDI E BORDAS ARREDONDADAS IGUAIS À FOTO
+   ========================================================= */
+.themes-section {
+  background-color: #051026;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(30, 58, 110, 0.3) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(14, 30, 62, 0.4) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' width='1000' height='500' opacity='0.08'%3E%3Cpath fill='%23ffffff' d='M150,150 Q180,120 220,130 T280,180 T260,240 T200,260 T140,220 Z M650,120 Q700,90 760,110 T840,160 T820,230 T750,250 T680,210 Z M700,320 Q750,300 800,330 T790,400 T730,420 T690,370 Z M220,330 Q250,300 280,340 T270,410 T230,420 T200,370 Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 24px;
+  padding: 2.25rem 2.5rem 3rem;
+  box-shadow: 0 20px 50px rgba(5, 16, 38, 0.35);
+  color: #ffffff;
+  margin-bottom: 3rem;
+}
+
+.section-title-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.section-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+}
+
+.themes-heading {
+  color: #ffffff;
+  font-size: 1.45rem;
+}
+
+.themes-subheading {
+  color: #94a3b8;
+  font-size: 0.84rem;
+}
+
+.themes-count-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+}
+
+/* CARD DE TEMA COM MOLDURA DOURADA E PASTA AMARELA */
+.theme-card {
+  background: #091734;
+  border: 1.5px solid #f59e0b;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.theme-card::before {
+  display: none;
+}
+
+.theme-card:hover {
+  transform: translateY(-3px);
+  border-color: #fbbf24;
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.18);
+}
+
+.theme-emoji-badge {
+  width: 44px;
+  height: 44px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 10px;
+  box-shadow: none;
+  font-size: 1.35rem;
+}
+
+.theme-icon-folder {
+  filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.4));
+}
+
+.theme-meta-indicators {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.material-pill {
+  border-radius: 6px;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+}
+
+.material-pill.active {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #fde68a;
+}
+
+.material-pill.inactive {
+  opacity: 0.45;
+}
+
+.theme-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.theme-description {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Botão ACESSAR sólido dourado */
+.btn-access {
+  background: #f59e0b;
+  color: #091734;
+  font-weight: 900;
+  border-radius: 10px;
+  padding: 0.75rem 1.25rem;
+  letter-spacing: 0.06em;
+  box-shadow: none;
+}
+
+.btn-access:hover {
+  background: #fbbf24;
+  transform: none;
+  filter: none;
+}
+
+/* RODAPÉ ELEGANTE E DISCRETO IGUAL À IMAGEM */
+.footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-brand-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-ngs-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  background: #081225;
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.footer-ngs-text {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #fbbf24;
+  letter-spacing: -0.02em;
+}
+
+.footer-ngs-truck {
+  font-size: 0.95rem;
+}
+
+.footer-ngs-plane {
+  font-size: 0.85rem;
+  color: #fbbf24;
+  transform: rotate(20deg);
+}
+
+.footer-desc-group {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e2e8f0;
+  padding-left: 1.25rem;
+}
+
+.footer-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.15rem;
+}
+
+.footer-subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.gold-author {
+  color: #b45309;
+  font-weight: 700;
+}
+
+/* HARMONIZAÇÃO DAS OUTRAS PÁGINAS COM A NOVA DECORAÇÃO */
+.about-page-container,
+.theme-page-container,
+.admin-home-container,
+.form-page-container,
+.login-page-container {
+  color: #0f172a;
+}
+
+.btn-back {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-back:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.theme-detail-header {
+  background-color: #051026;
+  border-radius: 20px;
+  padding: 2.25rem;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(5, 16, 38, 0.2);
+}
+
+.theme-detail-title {
+  color: #ffffff;
+}
+
+.theme-detail-description {
+  color: #cbd5e1;
+}
+
+.contents-section-title h2 {
+  color: #0f172a;
+}
+
+.contents-section-title p {
+  color: #64748b;
+}
+
+.content-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.content-card .content-title {
+  color: #0f172a;
+}
+
+.content-card .content-desc {
+  color: #64748b;
+}
+
+.content-card:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.12);
+  background: #ffffff;
+}
+
+.btn-content-access {
+  background: #081225;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.btn-content-access:hover {
+  background: #142852;
+  color: #ffffff;
+}
+
+/* Área Administrativa com a nova decoração */
+.admin-badge-pill {
+  background: rgba(15, 23, 42, 0.06);
+  border-color: rgba(15, 23, 42, 0.15);
+  color: #0f172a;
+}
+
+.admin-card {
+  background: #091734;
+  border: 1.5px solid #f59e0b;
+}
+
+.admin-content-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+}
+
+.admin-content-card .content-title {
+  color: #0f172a;
+}
+
+.admin-content-card .content-desc {
+  color: #64748b;
+}
+
+.form-card-wrapper {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  color: #0f172a;
+}
+
+.form-card-header h2 {
+  color: #0f172a;
+}
+
+.form-card-header p {
+  color: #64748b;
+}
+
+.form-label {
+  color: #334155;
+}
+
+.form-input,
+.form-textarea {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #f59e0b;
+  background: #ffffff;
+}
+
+/* Login Page decor */
+.login-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.login-heading {
+  color: #0f172a;
+}
+
+.login-subheading {
+  color: #64748b;
+}
+
+.login-field-label {
+  color: #334155;
+}
+
+.login-input {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a;
+}
+
+.login-input:focus {
+  border-color: #f59e0b;
+  background: #ffffff;
+}
+
+.btn-login-submit {
+  background: #081225;
+  color: #ffffff;
+}
+
+.btn-login-submit:hover {
+  background: #142852;
+}
+
+/* Página Sobre decor */
+.about-hero-title {
+  color: #0f172a;
+}
+
+.about-hero-subtitle {
+  color: #475569;
+}
+
+.about-card-banner {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.about-section-heading {
+  color: #0f172a;
+}
+
+.concept-text {
+  color: #475569;
+}
+
+.objective-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.objective-card h3 {
+  color: #0f172a;
+}
+
+.objective-card p {
+  color: #64748b;
+}
+
+.author-card-wrapper {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.author-heading {
+  color: #0f172a;
+}
+
+.author-subheading {
+  color: #475569;
+}
+
+.author-description {
+  color: #475569;
+}
+
+.purpose-card {
+  background: #051026;
+  color: #ffffff;
+}
+
+.purpose-heading {
+  color: #ffffff;
+}
+
+.purpose-text {
+  color: #cbd5e1;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.quote-text {
+  color: #b45309;
+}

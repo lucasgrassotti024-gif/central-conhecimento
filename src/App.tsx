@@ -239,7 +239,8 @@ export default function App() {
           <div className="footer-brand-box">
             <div className="footer-ngs-badge">
               <span className="footer-ngs-text">NGS</span>
-              <span className="footer-ngs-icon">✈</span>
+              <span className="footer-ngs-truck">🚚</span>
+              <span className="footer-ngs-plane">✈</span>
             </div>
             <div className="footer-desc-group">
               <p className="footer-title">
