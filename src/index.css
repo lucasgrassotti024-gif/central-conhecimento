@@ -2691,6 +2691,105 @@ body {
   max-width: 580px;
 }
 
+/* Tipografia Escura no Hero (textos que antes estavam claros) */
+.home-hero-title {
+  color: #0f172a !important; /* "Meu conhecimento" em preto/escuro nítido */
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.15rem;
+}
+
+/* Palavra dourada permanece dourada */
+.highlight-gold {
+  color: #d97706;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Parágrafo explicativo em preto/grafite escuro de alta legibilidade */
+.home-hero-description {
+  color: #1e293b !important;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* 3 Pilares com textos escuros/pretos */
+.hero-features-list {
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.85rem 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-text strong {
+  color: #0f172a !important; /* Título do pilar em preto */
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.feature-text span {
+  color: #334155 !important; /* Subtítulo do pilar em cinza escuro/preto */
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+/* Assinatura */
+.hero-author-signature {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.signature-handwritten {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: #0f172a !important; /* Assinatura cursiva em preto */
+  line-height: 1;
+  font-weight: 700;
+}
+
+.hero-author-signature .signature-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-author-signature .author-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #d97706 !important; /* Mantido dourado conforme solicitado */
+}
+
+.hero-author-signature .author-role {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #475569 !important; /* Cargo em tom escuro */
+}
+
 .hero-media-column {
   position: absolute;
   top: 0;
