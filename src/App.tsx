@@ -253,6 +253,9 @@ export default function App() {
               <p className="footer-subtitle">
                 Desenvolvida por <strong className="gold-author">Nicholas G. Spolavori</strong> • Analista de Sinistros
               </p>
+              <p className="footer-dev-credit">
+                Site desenvolvido por Lucas Grassotti Spolavori
+              </p>
             </div>
           </div>
         </div>
